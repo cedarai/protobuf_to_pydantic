@@ -84,7 +84,7 @@ class ParseFromPbOption(object):
                     continue
                 else:
                     type_name = "message"
-            if field.label == FieldDescriptor.LABEL_REPEATED and not (
+            if field.is_repeated and not (
                 field.message_type and field.message_type.name.endswith("Entry")
             ):
                 # Support Protobuf.RepeatedXXX
